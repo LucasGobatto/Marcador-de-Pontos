@@ -30,10 +30,10 @@ export const App: React.FC = () => {
     <Router>
       <div>
         <Switch>
-          <Route path="/:name" component={Home} />
-          <Route path="/:name" component={NewGame} />
-          <Route path="/:name" component={Continue} />
-          <Route path="/:name" component={Rules} />
+          <Route exact path="/" component={Home} />
+          <Route path="/newgame" component={NewGame} />
+          <Route path="/continue" component={Continue} />
+          <Route path="/rules" component={Rules} />
         </Switch>
       </div>
     </Router>

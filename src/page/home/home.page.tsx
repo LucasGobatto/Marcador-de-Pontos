@@ -5,25 +5,30 @@ import Logo from "../../assets/icons/darklogo.jpeg";
 
 export const Home = () => {
 
-  const params = useParams();
-  console.log(params);
-
   const history = useHistory();
 
-    function handleClick(name: string) {
-    history.push(`${name}`);
+  function handleClickNewGame() {
+    history.push("/newgame");
+  }
+
+  function handleClickContinue() {
+    history.push("/continue");
+  }
+
+  function handleClickRules() {
+    history.push("/rules");
   }
 
   return (
     <div className="home">
       <img className="logo" src={Logo} alt="logo" />
-      <button className="button" onClick={() => handleClick("newgame")}>
+      <button className="button" onClick={() => handleClickNewGame()}>
         NOVO
       </button>
-      <button className="button" onClick={() => handleClick("continue")}>
+      <button className="button" onClick={() => handleClickContinue()}>
         CONTINUAR
       </button>
-      <button className="button" onClick={() => handleClick("rules")} >
+      <button className="button" onClick={() => handleClickRules()} >
         REGRAS
       </button>
     </div>

@@ -5,11 +5,11 @@ export const NewGame = () => {
   
   const params = useParams();
   console.log(params);
-  
+
   const history = useHistory();
 
   const handleClick = () => {
-    history.push("/home");
+    history.push("/");
   };
 
   return (
