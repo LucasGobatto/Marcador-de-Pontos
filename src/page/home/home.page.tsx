@@ -7,28 +7,21 @@ export const Home = () => {
 
   const history = useHistory();
 
-  function handleClickNewGame() {
-    history.push("/newgame");
+  function handleClick(name: string) {
+    history.push(name);
   }
 
-  function handleClickContinue() {
-    history.push("/continue");
-  }
-
-  function handleClickRules() {
-    history.push("/rules");
-  }
 
   return (
     <div className="home">
       <img className="logo" src={Logo} alt="logo" />
-      <button className="button" onClick={() => handleClickNewGame()}>
+      <button className="button" onClick={() => handleClick("newgame")}>
         NOVO
       </button>
-      <button className="button" onClick={() => handleClickContinue()}>
+      <button className="button" onClick={() => handleClick("continue")}>
         CONTINUAR
       </button>
-      <button className="button" onClick={() => handleClickRules()} >
+      <button className="button" onClick={() => handleClick("rules")} >
         REGRAS
       </button>
     </div>
