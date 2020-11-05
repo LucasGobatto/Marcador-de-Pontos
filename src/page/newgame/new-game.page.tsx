@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import "./new-game.page.styles.css";
 import { ButtonPage } from "../../components/buttonPage.component";
 import { InputName } from "../../components/inputName.components";
+import { stringify } from "querystring";
+
+interface InputNameProps {
+  name: string;
+  valuw: string;
+}
 
 export function NewGame() {
 
-  const [inputName, setInputName] = useState({});
+  const [inputName, setInputName] = useState<InputNameProps>({} as InputNameProps);
 
   function handleSubmit(event: { preventDefault: () => void; }) {
     event.preventDefault();
