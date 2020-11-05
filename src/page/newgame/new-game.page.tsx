@@ -1,31 +1,39 @@
-import React from "react";
-import { useHistory, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import "./new-game.page.styles.css";
+import { ButtonPage } from "../../components/buttonPage.component";
+import { InputName } from "../../components/inputName.components";
 
-export const NewGame = () => {
-  
-  const params = useParams();
-  console.log(params);
+export function NewGame() {
 
-  const history = useHistory();
+  const [inputName, setInputName] = useState({});
 
-  const handleClick = () => {
-    history.push("/");
-  };
+  function handleSubmit(event: { preventDefault: () => void; }) {
+    event.preventDefault();
+    console.log(inputName);
+    setInputName(inputName);
+}
+
+  function handleChange(name: any, value: any) {
+    setInputName(prev => ({...prev, [name]: value}));
+  }
+
+  function handleClick() { 
+    console.log(inputName)
+  }
 
   return (
     <div className="novo">
-      <h1>Equipe 01</h1>
-      <input type="text" />
+      <h1>Equipe 1</h1>
+        <InputName placeholder="Nome 01" name="Nome 01" type="text" value="" onChange={handleChange} />
+        <InputName placeholder="Nome 02" name="Nome 02" type="text" value="" onChange={handleChange} />
       <br></br>
-      <input type="text" />
-      <h1>Equipe 02</h1>
-      <input type="text" />
+        <InputName placeholder="Nome 03" name="Nome 03" type="text" value="" onChange={handleChange} />
+        <InputName placeholder="Nome 04" name="Nome 04" type="text" value="" onChange={handleChange} />
       <br></br>
-      <input type="text" />
+      <button className="button" onClick={handleClick}>Combinar Nomes</button>
       <br></br>
-      <button className="button">COMBINAR NOMES</button>
-      <br></br>
-      <button className="button" onClick={() => handleClick()}>HOME</button>
+      <ButtonPage title="Inicio" />
     </div>
   );
-};
+}

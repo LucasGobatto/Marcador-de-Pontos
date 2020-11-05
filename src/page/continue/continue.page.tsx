@@ -1,17 +1,11 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { ButtonPage } from "../../components/buttonPage.component";
 
 export const Continue = () => {
     
-    const history = useHistory();
-    
-    const handleClick = () => {
-      history.push("/");
-    };
-
       return(
           <div>
-              <button className="button" onClick={handleClick}>Home</button>
+              <ButtonPage title="Inicio"/>
           </div>
       );
     };
