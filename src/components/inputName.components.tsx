@@ -18,7 +18,7 @@ export function InputName(props: { placeholder: any; name: any, type: any, value
             name={props.name}
             type="text"
             value={props.value ? props.value : inputName}
-            onChange={(event) => handleChange(event)}
+            onChange={handleChange}
             required />
             <br></br>
         </div>

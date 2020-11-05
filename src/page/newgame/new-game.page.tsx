@@ -19,7 +19,7 @@ export function NewGame() {
   }
 
   function handleClick() { 
-    console.log(inputName)
+    return inputName
   }
 
   return (
