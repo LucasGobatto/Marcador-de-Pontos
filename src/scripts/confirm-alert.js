@@ -1,4 +1,4 @@
-import { Alert } from 'react-native';
+import { Alert } from 'react';
 
 export function confirmAlert(msg, detail) {
   return new Promise((res, rej) =>
