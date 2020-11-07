@@ -1,22 +1,22 @@
-import React, {useState} from "react";
-import "./component.styles.css";
+import React from 'react';
+import './component.styles.css';
 
-export function InputName(props: { placeholder: any; name: any, type: any, value: any, onChange: any}) {
+interface InputNameProps {
+  placeholder?: string;
+  name: "player1" | "player2" | "player3" | "player4";
+  onChangeParent: (text: string, name: string) => void; 
+}
 
-    function handleChange   (event: { target: { value: any;}; }){
-        props.onChange(event.target.value)
-    }
-   
-    return(
-        <div>
-            <input
-            className="input"
-            placeholder={props.placeholder}
-            type="text"
-            value={props.value}
-            onChange={handleChange} />
-            <br></br>
-        </div>
-            
-    )
+export function InputName(props: InputNameProps) {
+  function handleChangeChild(text: string): void {
+    props.onChangeParent(text, props.name);
+  }
+
+  return (
+    <input
+      className="input"
+      placeholder={props.placeholder}
+      onChange={(event) => handleChangeChild(event.target.value)}
+    />
+  );
 }

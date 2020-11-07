@@ -1,16 +1,11 @@
-import {silabas} from './silabas';
+import { silabas } from './silabas';
 var _pj;
 function _pj_snippets(container) {
   function in_es6(left, right) {
     if (right instanceof Array || typeof right === 'string') {
       return right.indexOf(left) > -1;
     } else {
-      if (
-        right instanceof Map ||
-        right instanceof Set ||
-        right instanceof WeakMap ||
-        right instanceof WeakSet
-      ) {
+      if (right instanceof Map || right instanceof Set || right instanceof WeakMap || right instanceof WeakSet) {
         return right.has(left);
       } else {
         return left in right;
@@ -57,10 +52,7 @@ export function cutName(nome) {
           }
         } else {
           if ((silaba + N[i]).length === 4) {
-            if (
-              _pj.in_es6(silaba[0] + silaba[1], L) &&
-              _pj.in_es6(silaba[2] + N[i], L)
-            ) {
+            if (_pj.in_es6(silaba[0] + silaba[1], L) && _pj.in_es6(silaba[2] + N[i], L)) {
               palavra.push(silaba[0] + silaba[1]);
               silaba = silaba[2] + N[i];
               if (i === N.length - 1) {
@@ -77,10 +69,7 @@ export function cutName(nome) {
             }
           } else {
             if ((silaba + N[i]).length === 5) {
-              if (
-                _pj.in_es6(silaba[0] + silaba[1] + silaba[2], L) &&
-                _pj.in_es6(silaba[3] + N[i], L)
-              ) {
+              if (_pj.in_es6(silaba[0] + silaba[1] + silaba[2], L) && _pj.in_es6(silaba[3] + N[i], L)) {
                 palavra.push(silaba[0] + silaba[1] + silaba[2]);
                 silaba = silaba[3] + N[i];
                 if (i === N.length - 1) {
@@ -124,17 +113,11 @@ export function cutName(nome) {
         } else {
           if ((silaba + N[i]).length === 4) {
             if (i < N.length - 2) {
-              if (
-                _pj.in_es6(silaba, L) &&
-                _pj.in_es6(N[i] + N[i + 1] + N[i + 2], L)
-              ) {
+              if (_pj.in_es6(silaba, L) && _pj.in_es6(N[i] + N[i + 1] + N[i + 2], L)) {
                 palavra.push(silaba);
                 silaba = N[i];
               } else {
-                if (
-                  _pj.in_es6(silaba[0] + silaba[1], L) &&
-                  _pj.in_es6(silaba[2] + N[i], L)
-                ) {
+                if (_pj.in_es6(silaba[0] + silaba[1], L) && _pj.in_es6(silaba[2] + N[i], L)) {
                   palavra.push(silaba[0] + silaba[1]);
                   silaba = silaba[2] + N[i];
                   if (i === N.length - 1) {
@@ -151,10 +134,7 @@ export function cutName(nome) {
                 }
               }
             } else {
-              if (
-                _pj.in_es6(silaba[0] + silaba[1], L) &&
-                _pj.in_es6(silaba[2] + N[i], L)
-              ) {
+              if (_pj.in_es6(silaba[0] + silaba[1], L) && _pj.in_es6(silaba[2] + N[i], L)) {
                 palavra.push(silaba[0] + silaba[1]);
                 silaba = silaba[2] + N[i];
                 if (i === N.length - 1) {

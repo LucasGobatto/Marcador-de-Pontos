@@ -1,18 +1,19 @@
-import {cutName} from './cut-names.es6';
+import { cutName } from './cut-names.es6';
 
-export function equipName(name1, name2) {
-  name1 = cutName(name1);
-  name2 = cutName(name2);
-  return makeRandomName(name1, name2);
+export function equipName(name1: string, name2: string): string {
+  const player1 = cutName(name1) as string[];
+  const player2 = cutName(name2) as string[];
+  const randomName = makeRandomName(player1, player2)
+  return randomName;
 }
 
-function makeRandomName(name1, name2) {
-  const randomList = [];
+function makeRandomName(name1: string[], name2:string[]): string {
+  const randomList: string[] = [];
   let randomName = '';
   const maxValue = 3;
 
-  name1.map((i) => randomList.push(i));
-  name2.map((i) => randomList.push(i));
+  name1.map((i: string) => randomList.push(i));
+  name2.map((i: string) => randomList.push(i));
   console.log(name1, randomList.length);
   console.log(name2, randomList.length);
 
@@ -32,7 +33,7 @@ function makeRandomName(name1, name2) {
   return randomName;
 }
 
-function getRandomInt(min, max) {
+function getRandomInt(min: number, max: number): number {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;

@@ -1,1 +1,1 @@
-export * from "./continue.page";
+export * from './continue.page';

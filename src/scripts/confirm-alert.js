@@ -1,4 +1,4 @@
-import {Alert} from 'react-native';
+import { Alert } from 'react-native';
 
 export function confirmAlert(msg, detail) {
   return new Promise((res, rej) =>
@@ -20,7 +20,7 @@ export function confirmAlert(msg, detail) {
           style: 'cancel',
         },
       ],
-      {cancelable: false},
+      { cancelable: false },
     ),
   );
 }

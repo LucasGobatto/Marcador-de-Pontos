@@ -1,20 +1,26 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import "./component.styles.css";
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import './component.styles.css';
 
-export function ButtonPage(props: { title: any; }) {
-    
-    const buttonTitle = props.title;
-    const lowerTitle = buttonTitle.toLowerCase();
-    const noSpaceTitle = lowerTitle.replace(/\s+/g, '');
+export function ButtonPage(props: { title: string }) {
+  const buttonTitle = props.title;
+  const lowerTitle = buttonTitle.toLowerCase();
+  const noSpaceTitle = lowerTitle.replace(/\s+/g, '');
 
-    const history = useHistory();
+  const history = useHistory();
 
-    function handleClick(name: string) {
-        history.push(name);
-    }
+  function handleClick(name: string) {
+    history.push(name);
+  }
 
-    return (
-        <button className="botao" onClick={() => {handleClick(noSpaceTitle)}}>{buttonTitle}</button>
-    )
+  return (
+    <button
+      className="botao"
+      onClick={() => {
+        handleClick(noSpaceTitle);
+      }}
+    >
+      {buttonTitle}
+    </button>
+  );
 }
