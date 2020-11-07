@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import "./App.css";
 import { NewGame } from "./page/newgame";
@@ -6,6 +7,17 @@ import { Continue } from "./page/continue";
 import { Rules } from "./page/rules";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+=======
+import * as React from 'react';
+
+import './App.css';
+import { NovoJogo } from './page/newgame';
+import { HomePage } from './page/home';
+
+export const App: React.FC = () => {
+  const [isHome, setIsHome] = React.useState(true);
+  const [renderedComponent, setRenderedComponent] = React.useState(<HomePage />);
+>>>>>>> eslint and prettier configs
 
 export const App: React.FC = () => {
 
