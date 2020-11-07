@@ -5,9 +5,8 @@ export function InputName(props: { placeholder: any; name: any, type: any, value
 
     const [inputName, setInputName] = useState("");
 
-    function handleChange   (event: { target: { value: any; name: any }; }){
+    function handleChange   (event: { target: { value: any;}; }){
         setInputName(event.target.value);
-        props.onChange(event.target.name, event.target.value);
     }
    
     return(
