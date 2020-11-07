@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import "./new-game.page.styles.css";
 import { ButtonPage } from "../../components/buttonPage.component";
@@ -26,6 +27,9 @@ export function NewGame() {
   function handleClick() { 
     return inputName
   }
+=======
+import * as React from 'react';
+>>>>>>> eslint and prettier configs
 
   return (
     <div className="novo">

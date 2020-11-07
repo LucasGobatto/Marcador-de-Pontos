@@ -33,15 +33,29 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "7.12.3",
     "@types/jest": "24.9.1",
     "@types/node": "12.12.62",
     "@types/react": "16.9.50",
     "@types/react-dom": "16.9.8",
-    "@types/react-router-dom": "5.1.6",
-    "@typescript-eslint/eslint-plugin": "^4.6.1",
-    "@typescript-eslint/parser": "^4.6.1",
-    "eslint": "6.6.0",
-    "eslint-plugin-react": "^7.21.5",
+    "babel-loader": "8.1.0",
+    "husky": "4.3.0",
+    "lint-staged": "10.5.1",
+    "prettier": "2.1.2",
     "typescript": "3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-merge": "npx install-changed",
+      "post-checkout": "npx install-changed",
+      "post-rebase": "npx install-changed"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
