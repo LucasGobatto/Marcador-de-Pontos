@@ -1,1 +1,1 @@
-export * from "./rules.page";
+export * from './rules.page';

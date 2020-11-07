@@ -1,46 +1,45 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-import "./new-game.page.styles.css";
-import { ButtonPage } from "../../components/buttonPage.component";
-import { InputName } from "../../components/inputName.components";
-import { stringify } from "querystring";
+import React, { useState } from 'react';
+import './new-game.page.styles.css';
+import { ButtonPage } from '../../components/buttonPage.component';
+import { InputName } from '../../components/inputName.components';
+import { equipName } from '../../scripts/equip-name';
 
-interface InputNameProps {
-  name: string;
-  valuw: string;
+interface PlayerNames {
+  player1: string;
+  player2: string;
+  player3: string;
+  player4: string;
 }
 
 export function NewGame() {
+  const [inputName, setInputName] = useState<PlayerNames>({} as PlayerNames);
+  const [randomName, setRandomName] = useState<string[]>([]);
 
-  const [inputName, setInputName] = useState<InputNameProps>({} as InputNameProps);
-
-  function handleSubmit(event: { preventDefault: () => void; }) {
-    event.preventDefault();
-    console.log(inputName);
-    setInputName(inputName);
-}
-
-  function handleChange(name: any, value: any) {
-    setInputName(prev => ({...prev, [name]: value}));
+  function handleChangeParent(input: string, player: string): void {
+    setInputName({ ...inputName, [player]: input })
   }
 
-  function handleClick() { 
-    return inputName
+  function handleClick() {
+    const teamName1 = equipName(inputName.player1, inputName.player2);
+    const teamName2 = equipName(inputName.player3, inputName.player4);
+    setRandomName([teamName1, teamName2])
   }
-=======
-import * as React from 'react';
->>>>>>> eslint and prettier configs
+
+
 
   return (
     <div className="novo">
-      <h1>Equipe 1</h1>
-        <InputName placeholder="Nome 01" name="Nome 01" type="text" value="" onChange={handleChange} />
-        <InputName placeholder="Nome 02" name="Nome 02" type="text" value="" onChange={handleChange} />
+      <h1>{randomName.length > 0 ? `${randomName[0]}` : "Equipe 1"}</h1>
+      <InputName placeholder="Nome 01" name="player1" onChangeParent={handleChangeParent} />
+      <InputName placeholder="Nome 02" name="player2" onChangeParent={handleChangeParent} />
       <br></br>
-        <InputName placeholder="Nome 03" name="Nome 03" type="text" value="" onChange={handleChange} />
-        <InputName placeholder="Nome 04" name="Nome 04" type="text" value="" onChange={handleChange} />
+      <h1>{randomName.length > 0 ? `${randomName[1]}` : "Equipe 2"}</h1>
+      <InputName placeholder="Nome 03" name="player3" onChangeParent={handleChangeParent} />
+      <InputName placeholder="Nome 04" name="player4" onChangeParent={handleChangeParent} />
       <br></br>
-      <button className="button" onClick={handleClick}>Combinar Nomes</button>
+      <button className="button" onClick={handleClick}>
+        Combinar Nomes
+      </button>
       <br></br>
       <ButtonPage title="Inicio" />
     </div>
