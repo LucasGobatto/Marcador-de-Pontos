@@ -23,6 +23,7 @@ export function NewGame() {
     const teamName1 = equipName(inputName.player1, inputName.player2);
     const teamName2 = equipName(inputName.player3, inputName.player4);
     setRandomName([teamName1, teamName2])
+    console.log([teamName1, teamName2])
   }
 
 

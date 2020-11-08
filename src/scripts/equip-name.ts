@@ -14,8 +14,6 @@ function makeRandomName(name1: string[], name2:string[]): string {
 
   name1.map((i: string) => randomList.push(i));
   name2.map((i: string) => randomList.push(i));
-  console.log(name1, randomList.length);
-  console.log(name2, randomList.length);
 
   let i = 0;
   let initial = 0;

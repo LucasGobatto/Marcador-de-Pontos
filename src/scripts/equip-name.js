@@ -13,8 +13,6 @@ function makeRandomName(name1, name2) {
 
   name1.map((i) => randomList.push(i));
   name2.map((i) => randomList.push(i));
-  console.log(name1, randomList.length);
-  console.log(name2, randomList.length);
 
   let i = 0;
   let initial = 0;
