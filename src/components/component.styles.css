@@ -8,6 +8,15 @@
   margin: 2px;
 }
 
+.buttonScore {
+  border-radius: 30px;
+  width: 120px;
+  height: 30px;
+  font-family: Arial;
+  font-weight: bold;
+  margin: 2px;
+}
+
 .input {
   margin: 2px;
 }
