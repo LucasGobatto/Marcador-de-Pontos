@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import "./component.styles.css";
 
 export function ButtonURL(props: { site: string; url: any }) {
@@ -12,6 +11,6 @@ export function ButtonURL(props: { site: string; url: any }) {
     }
 
     return (
-        <button className="botao" onClick={() => {handleClick()}}>{buttonTitle}</button>
+        <button className="botao" onClick={handleClick}>{buttonTitle}</button>
     )
 }

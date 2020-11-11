@@ -1,8 +1,8 @@
 import React from "react";
 import { ButtonPage } from "../../components/buttonPage.component";
 import "../rules/rules.page.styles.css";
-import Image01 from "../../assets/images/canastra-suja.jpg";
-import Image02 from "../../assets/images/canastra-limpa.jpg";
+import CanastraSuja from "../../assets/images/canastra-suja.jpg";
+import CanastraLimpa from "../../assets/images/canastra-limpa.jpg";
 import { ButtonURL } from "../../components/buttonURL.component";
 
 
@@ -60,8 +60,8 @@ export function Rules() {
             <b>Trinca -</b> A trinca é formada por 3 ou mais cartas do mesmo valor, independente do naipe.<br/><br/>
 
             <b>Canastra -</b> Jogo de sete cartas ou mais do mesmo valor de qualquer naipe, ou jogo de sete cartas em sequência, do mesmo naipe. Existem dois tipos de canastra, a suja que tem coringa e a limpa que não tem:</p>
-            <img className="Regras" src={Image01} alt="Canastra Limpa"/>
-            <img className="Regras" src={Image02} alt="Canastra Suja"/>
+            <img className="Regras" src={CanastraSuja} alt="Canastra Limpa"/>
+            <img className="Regras" src={CanastraLimpa} alt="Canastra Suja"/>
             <br/>
 
             <h2>Contagem dos pontos</h2>
