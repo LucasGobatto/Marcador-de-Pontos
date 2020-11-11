@@ -3,6 +3,7 @@ import './new-game.page.styles.css';
 import { ButtonPage } from '../../components/buttonPage.component';
 import { InputName } from '../../components/inputName.components';
 import { equipName } from '../../scripts/equip-name';
+import { useHistory } from 'react-router-dom';
 
 interface PlayerNames {
   player1: string;
@@ -11,9 +12,12 @@ interface PlayerNames {
   player4: string;
 }
 
-export function NewGame() {
+export function NewGame(props: { title: string }) {
   const [inputName, setInputName] = useState<PlayerNames>({} as PlayerNames);
   const [randomName, setRandomName] = useState<string[]>([]);
+
+  const history = useHistory();
+  const pageTitle = "/novojogo/placar";
 
   function handleChangeParent(input: string, player: string): void {
     setInputName({ ...inputName, [player]: input })
@@ -22,8 +26,9 @@ export function NewGame() {
   function handleClick() {
     const teamName1 = equipName(inputName.player1, inputName.player2);
     const teamName2 = equipName(inputName.player3, inputName.player4);
-    setRandomName([teamName1, teamName2])
-    console.log([teamName1, teamName2])
+    const teams = [teamName1, teamName2];
+    setRandomName(teams);
+    history.push(pageTitle);
   }
 
 
@@ -39,7 +44,7 @@ export function NewGame() {
       <InputName placeholder="Nome 04" name="player4" onChangeParent={handleChangeParent} />
       <br></br>
       <button className="button" onClick={handleClick}>
-        Combinar Nomes
+        COMBINAR NOMES
       </button>
       <br></br>
       <ButtonPage title="Inicio" />
