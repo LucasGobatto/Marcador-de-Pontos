@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './new-game.page.styles.css';
 import { ButtonPage, InputName } from '../../components';
-import CombineNamesButton from '../../components/button/common-button.component';
 import { equipName } from '../../scripts/equip-name';
 
 interface PlayerNames {
@@ -52,14 +51,16 @@ export function NewGame() {
   return (
     <div className="novo">
       <h1>{randomName.length > 0 ? `${randomName[0]}` : 'Equipe 1'}</h1>
-      <InputName placeholder="Nome 01" name="player1" onChangeParent={handleChangeParent} readyToValidate={clicked} />
-      <InputName placeholder="Nome 02" name="player2" onChangeParent={handleChangeParent} readyToValidate={clicked} />
+      <InputName placeholder="Jogador 1" name="player1" onChangeParent={handleChangeParent} readyToValidate={clicked} />
+      <InputName placeholder="Jodador 2" name="player2" onChangeParent={handleChangeParent} readyToValidate={clicked} />
       <br></br>
       <h1>{randomName.length > 0 ? `${randomName[1]}` : 'Equipe 2'}</h1>
-      <InputName placeholder="Nome 03" name="player3" onChangeParent={handleChangeParent} readyToValidate={clicked} />
-      <InputName placeholder="Nome 04" name="player4" onChangeParent={handleChangeParent} readyToValidate={clicked} />
+      <InputName placeholder="Jogador 3" name="player3" onChangeParent={handleChangeParent} readyToValidate={clicked} />
+      <InputName placeholder="Jogador 4" name="player4" onChangeParent={handleChangeParent} readyToValidate={clicked} />
       <br></br>
-      <CombineNamesButton title="Combinar Nomes" onClick={handleClick} />
+      <button className="random-button" onClick={handleClick}>
+        Combinar Nomes
+      </button>
       <br></br>
       <ButtonPage title="Inicio" icon="home" />
     </div>

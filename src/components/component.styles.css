@@ -1,0 +1,19 @@
+.botao {
+  border-radius: 30px;
+  width: 120px;
+  height: 30px;
+  font-family: Arial;
+  font-weight: bold;
+  margin: 2px;
+}
+
+.input {
+  margin: 2px;
+  width: 15em;
+  height: 2rem;
+  font-size: 20px;
+  margin: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 1rem;
+  text-align: inherit;
+}

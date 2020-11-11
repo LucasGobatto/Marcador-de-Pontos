@@ -1,9 +1,12 @@
-body {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
+* {
+  box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+  max-height: 1440px;
   background-color: #000;
 }

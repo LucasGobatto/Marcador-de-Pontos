@@ -1,6 +1,25 @@
-h1 {
-  color: white;
-  font-family: 'Dosis', sans-serif;
-  padding: 5px;
+.container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding-top: 15vh;
+  align-items: center;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 769px) {
+  .container {
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+.equip-contianer {
+  display: grid;
+  align-items: center;
+  text-align: center;
   justify-content: center;
+  margin: 5vh;
 }
