@@ -63,7 +63,7 @@ export function NewGame() {
         Combinar Nomes
       </button>
       <br></br>
-      <ButtonPage title="Inicio" />
+      <ButtonPage title="Inicio" icon="home" />
     </div>
   );
 }
