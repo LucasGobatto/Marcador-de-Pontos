@@ -5,6 +5,8 @@ import { Home } from './page/home';
 import { Continue } from './page/continue';
 import { Rules } from './page/rules';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Score } from './page/score';
+import { AddPoints } from './page/addpoints';
 
 export const App: React.FC = () => {
   return (
@@ -12,9 +14,11 @@ export const App: React.FC = () => {
       <div>
         <Switch>
           <Route path="/inicio" component={Home} />
-          <Route path="/novojogo" component={NewGame} />
+          <Route exact path="/novojogo" component={NewGame} />
           <Route path="/continue" component={Continue} />
           <Route path="/regras" component={Rules} />
+          <Route exact path="/novojogo/placar" component={Score} />
+          <Route exact path="/novojogo/placar/adicionar" component={AddPoints} />
         </Switch>
       </div>
     </Router>
