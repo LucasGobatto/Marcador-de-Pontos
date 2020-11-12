@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './component.styles.css';
+import './input-name.styled.css';
 
 interface InputNameProps {
-  name: "player1" | "player2" | "player3" | "player4";
+  name: 'player1' | 'player2' | 'player3' | 'player4';
   readyToValidate: boolean;
   placeholder?: string;
   onChangeParent: (text: string, name: string, hasError: boolean) => void;
