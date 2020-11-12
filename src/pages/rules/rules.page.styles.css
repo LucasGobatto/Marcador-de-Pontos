@@ -1,26 +1,26 @@
-div {
+.container-rules {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px 50px 0px;
 }
 
-h1 {
+.title-rules {
   color: #c1272d;
-  font-family: "Dosis", sans-serif;
+  font-family: 'Dosis', sans-serif;
   align-items: center;
   text-transform: uppercase;
 }
 
-h2 {
+.topic-rules {
   color: #c1272d;
-  font-family: "Dosis", sans-serif;
+  font-family: 'Dosis', sans-serif;
   align-items: center;
 }
 
-p {
+.paragraph-rules {
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: justify;
   font-style: normal;
   font-weight: 400;
