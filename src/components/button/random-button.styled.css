@@ -1,0 +1,22 @@
+.random-button {
+  background-color: #c02932;
+  color: #fff;
+  text-align: center;
+  border: none;
+  border-radius: 2rem;
+  width: 9rem;
+  height: 3.5rem;
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+  margin: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.random-button:hover {
+  background-color: #ee1414;
+  width: 9.5rem;
+  height: 4rem;
+  margin: 0.25rem;
+  transition: 0.3s;
+}
