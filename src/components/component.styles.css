@@ -2,8 +2,9 @@
   border-radius: 30px;
   width: 120px;
   height: 30px;
-  font-family: Arial;
+  font-family: "Dosis", sans-serif;
   font-weight: bold;
+  text-transform: uppercase;
   margin: 2px;
 }
 
