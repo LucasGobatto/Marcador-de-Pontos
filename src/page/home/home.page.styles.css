@@ -8,26 +8,6 @@
   margin-top: 17%;
 }
 
-.button {
-  border-radius: 30px;
-  width: 120px;
-  height: 30px;
-  font-family: Arial;
-  font-weight: bold;
-  margin: 2px;
-}
-
-.button:hover {
-  border-radius: 30px;
-  width: 130px;
-  height: 40px;
-  font-family: Arial;
-  font-weight: bold;
-  margin: 2px;
-  transition: 0.3s;
-  background-color: #ee1414;
-}
-
 h1 {
   color: white;
 }

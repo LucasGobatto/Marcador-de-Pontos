@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './new-game.page.styles.css';
-import { ButtonPage } from '../../components/buttonPage.component';
-import { InputName } from '../../components/inputName.components';
+import { ButtonPage, InputName } from '../../components';
+import CombineNamesButton from '../../components/button/common-button.component';
 import { equipName } from '../../scripts/equip-name';
 
 interface PlayerNames {
@@ -59,11 +59,9 @@ export function NewGame() {
       <InputName placeholder="Nome 03" name="player3" onChangeParent={handleChangeParent} readyToValidate={clicked} />
       <InputName placeholder="Nome 04" name="player4" onChangeParent={handleChangeParent} readyToValidate={clicked} />
       <br></br>
-      <button className="button" onClick={handleClick}>
-        Combinar Nomes
-      </button>
+      <CombineNamesButton title="Combinar Nomes" onClick={handleClick} />
       <br></br>
-      <ButtonPage title="Inicio" />
+      <ButtonPage title="Inicio" icon="home" />
     </div>
   );
 }

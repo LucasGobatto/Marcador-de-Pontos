@@ -1,0 +1,37 @@
+button {
+  text-align: inherit;
+  border: none;
+  border-radius: 1.5rem;
+  width: 8rem;
+  height: 2.5rem;
+  background-color: #fff;
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+  margin: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  transition: 300ms;
+  width: 8.5rem;
+  height: 3rem;
+  margin: 0.25rem;
+  background-color: #bbb;
+}
+
+.red-icon {
+  color: #ee1414;
+  height: 1rem;
+  width: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+}
+
+.black-icon {
+  color: #000;
+  height: 1rem;
+  width: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+}
