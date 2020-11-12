@@ -1,37 +1,50 @@
-button {
-  text-align: inherit;
+.button-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   border: none;
-  border-radius: 1.5rem;
-  width: 8rem;
-  height: 2.5rem;
+  border-radius: 2rem;
+  width: 9rem;
+  height: 3.5rem;
   background-color: #fff;
+  border: #000 solid 2px;
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
+  font-size: large;
   margin: 0.5rem;
+  padding: 0.1rem;
   cursor: pointer;
   text-transform: uppercase;
 }
 
-.button:hover {
+.button-page:hover {
   transition: 300ms;
-  width: 8.5rem;
-  height: 3rem;
+  width: 9.5rem;
+  height: 4rem;
   margin: 0.25rem;
   background-color: #bbb;
 }
 
 .red-icon {
+  align-items: initial;
   color: #ee1414;
-  height: 1rem;
-  width: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .black-icon {
+  align-items: initial;
   color: #000;
-  height: 1rem;
-  width: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.button-name {
+  color: #000;
+  font-family: 'Dosis', sans-serif;
+  text-align: end;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
 }

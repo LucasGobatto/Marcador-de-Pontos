@@ -37,13 +37,13 @@ export function ButtonPage(props: ButtonProps) {
 
   return (
     <button
-      className="button"
+      className="button-page"
       onClick={() => {
         handleClick(noSpaceTitle);
       }}
     >
       {chooseIcon()}
-      {props.title}
+      <p className='button-name'>{props.title}</p>
     </button>
   );
 }

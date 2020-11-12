@@ -35,7 +35,7 @@ export function InputName(props: InputNameProps) {
 
   return (
     <input
-      className="input"
+      className="input-names"
       placeholder={props.placeholder}
       onChange={(event) => handleChangeChild(event.target.value)}
     />

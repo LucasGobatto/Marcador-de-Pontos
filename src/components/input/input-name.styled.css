@@ -1,4 +1,10 @@
-.input {
+.input-names {
   font-family: 'Roboto', sans-serif;
-  margin: 5px;
+  width: 15em;
+  height: 2.5rem;
+  font-size: 20px;
+  margin: 1rem;
+  border: 0.15rem solid #ccc;
+  border-radius: 2rem;
+  text-align: center;
 }
