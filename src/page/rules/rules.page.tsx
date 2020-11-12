@@ -6,10 +6,10 @@ import CanastraLimpa from '../../assets/images/canastra-limpa.jpg';
 
 export function Rules() {
   return (
-    <div>
-      <h1>Regras</h1>
-      <h2>Formatação</h2>
-      <p>
+    <div className="container-rules">
+      <h1 className="title-rules">Regras</h1>
+      <h2 className="topic-rules">Formatação</h2>
+      <p className="paragraph-rules">
         Pode ser jogado com dois ou quatro jogadores.
         <br />
         <br />
@@ -32,8 +32,8 @@ export function Rules() {
       </p>
       <br />
 
-      <h2>Como funciona</h2>
-      <p>
+      <h2 className="topic-rules">Como funciona</h2>
+      <p className="paragraph-rules">
         O primeiro jogador compra uma carta do monte ou do lixo, verifica quais são as combinações que pode fazer com
         essa carta e joga fora uma que não lhe interesse. Essa carta vai para a lixeira. Após o descarte, é a vez do
         jogador à esquerda daquele que começou a rodada, e assim por diante. Do segundo jogador em diante, existe a
@@ -56,8 +56,8 @@ export function Rules() {
         morto, serão descontados 100 pontos correspondentes ao morto, além das cartas que o jogador tiver em mãos.
       </p>
 
-      <h2>Convenções</h2>
-      <p>
+      <h2 className="topic-rules">Convenções</h2>
+      <p className="paragraph-rules">
         Pode trinca (também chamada de "lavadeira")
         <br />
         Não tem Joker (também chamado de "curingão")
@@ -67,8 +67,8 @@ export function Rules() {
         Pode bater com canastra suja
       </p>
 
-      <h2>Convenções</h2>
-      <p>
+      <h2 className="topic-rules">Convenções</h2>
+      <p className="paragraph-rules">
         <b>Baixar um jogo –</b> Um jogo é formado por 3 ou mais cartas do mesmo naipe, ordenadas em sequência numérica
         ou três ou mais cartas do mesmo valor, independente do naipe (trinca). No decorrer da partida podem-se
         acrescentar mais cartas ao jogo.
@@ -125,8 +125,8 @@ export function Rules() {
       <img className="Regras" src={CanastraLimpa} alt="Canastra Suja" />
       <br />
 
-      <h2>Contagem dos pontos</h2>
-      <p>
+      <h2 className="topic-rules">Contagem dos pontos</h2>
+      <p className="paragraph-rules">
         Ao término da partida, somam-se os pontos na mesa, ou seja, os valores das cartas baixadas e o valor extra das
         canastras. Descontam-se os valores das cartas que sobraram nas mãos de cada jogador.
         <br />
@@ -137,7 +137,7 @@ export function Rules() {
         comprado.
       </p>
       <br />
-      <h2>Outras Regras</h2>
+      <h2 className="topic-rules">Outras Regras</h2>
       <ButtonURL site="Jogatina" url="https://www.jogatina.com/regras-como-jogar-tranca.html" />
       <ButtonURL site="Jogos do Rei" url="http://www.jogosdorei.com.br/regras-tranca.php" />
       <ButtonURL site="Net Cartas" url="https://netcartas.com.br/tranca/regras.jsp" />

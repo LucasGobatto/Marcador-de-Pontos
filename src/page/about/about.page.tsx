@@ -4,9 +4,9 @@ import '../about/about.page.styles.css';
 
 export function About() {
   return (
-    <div>
-      <h1>De onde veio a ideia de fazer o app?</h1>
-      <p>
+    <div className="containier-about">
+      <h1 className="title-about">De onde veio a ideia de fazer o app?</h1>
+      <p className="paragraph-about">
         Na nossa família, todo mundo gosta de jogar tranca. E quando nos reunimos, vamos longe. 1h, 2h às vezes até 3h
         da manhã jogando. Pensa num monte de velhinho que costuma acordar 5h30 indo dormir às 3h. Enfim, sempre que
         jogamos acontece a mesma coisa: acaba a partida e precisamos anotar os pontos. Junto com o baralho já deixamos o
