@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './component.styles.css';
 
 interface InputNameProps {
-  placeholder?: string;
   name: "player1" | "player2" | "player3" | "player4";
-  onChangeParent: (text: string, name: string) => void; 
+  readyToValidate: boolean;
+  placeholder?: string;
+  onChangeParent: (text: string, name: string, hasError: boolean) => void;
 }
 
 export function InputName(props: InputNameProps) {
+  const [text, setText] = useState<string>('');
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    function validateField(text: string): void {
+      // false for just letters and true for else;
+      if (text === '') {
+        setHasError(true);
+      } else {
+        const regex = /[0-9]|\W|_/;
+        setHasError(regex.test(text));
+      }
+    }
+    if (props.readyToValidate) {
+      validateField(text);
+    }
+    console.log('entrou no useEffect');
+  }, [props, text]);
+
   function handleChangeChild(text: string): void {
-    props.onChangeParent(text, props.name);
+    setText(text);
+    props.onChangeParent(text, props.name, hasError);
   }
 
   return (
