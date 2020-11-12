@@ -49,8 +49,6 @@ export function NewGame() {
     handleValidation();
   }
 
-
-
   return (
     <div className="novo">
       <h1>{randomName.length > 0 ? `${randomName[0]}` : 'Equipe 1'}</h1>

@@ -4,3 +4,4 @@ export * from './newgame';
 export * from './home';
 export * from './rules';
 export * from './initial';
+export * from './about';
