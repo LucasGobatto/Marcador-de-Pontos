@@ -1,6 +1,6 @@
 import React from 'react';
-import { ButtonPage } from '../../components';
-import '../about/about.page.styles.css';
+import { ButtonPage } from '@components';
+import './about.page.styles.css';
 
 export function About() {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
-import { NewGame, Home, Continue, Rules, About, InitialPage } from './page';
+import './app.css';
+import { NewGame, Home, Continue, Rules, About, InitialPage } from '@pages';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { ButtonURL } from './components/button/buttonURL.component';
+import { ButtonURL } from '@components/button/buttonURL.component';
 
 export const App: React.FC = () => {
   return (

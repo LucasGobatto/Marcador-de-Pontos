@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './new-game.page.styles.css';
-import { ButtonPage, InputName, RandomNamesButton } from '../../components';
-import { equipName } from '../../scripts/equip-name';
+import { ButtonPage, InputName, RandomNamesButton } from '@components';
+import { equipName } from '@scripts/equip-name';
 
 interface PlayerNames {
   player1: { name: string; hasError: boolean };
@@ -52,16 +52,36 @@ export function NewGame() {
     <div className="container">
       <div className="equip-container">
         <h1 className="equip-names">{randomName.length > 0 ? `${randomName[0]}` : 'Equipe 1'}</h1>
-        <InputName placeholder="Jogador 1" name="player1" onChangeParent={handleChangeParent} readyToValidate={clicked} />
-        <InputName placeholder="Jodador 2" name="player2" onChangeParent={handleChangeParent} readyToValidate={clicked} />
+        <InputName
+          placeholder="Jogador 1"
+          name="player1"
+          onChangeParent={handleChangeParent}
+          readyToValidate={clicked}
+        />
+        <InputName
+          placeholder="Jodador 2"
+          name="player2"
+          onChangeParent={handleChangeParent}
+          readyToValidate={clicked}
+        />
       </div>
       <div className="equip-container">
         <h1 className="equip-names">{randomName.length > 0 ? `${randomName[1]}` : 'Equipe 2'}</h1>
-        <InputName placeholder="Jogador 3" name="player3" onChangeParent={handleChangeParent} readyToValidate={clicked} />
-        <InputName placeholder="Jogador 4" name="player4" onChangeParent={handleChangeParent} readyToValidate={clicked} />
+        <InputName
+          placeholder="Jogador 3"
+          name="player3"
+          onChangeParent={handleChangeParent}
+          readyToValidate={clicked}
+        />
+        <InputName
+          placeholder="Jogador 4"
+          name="player4"
+          onChangeParent={handleChangeParent}
+          readyToValidate={clicked}
+        />
       </div>
       <div className="button-container">
-        <RandomNamesButton title='Combinar Nomes' onClick={handleClick} />
+        <RandomNamesButton title="Combinar Nomes" onClick={handleClick} />
         <ButtonPage title="Inicio" icon="home" />
       </div>
     </div>

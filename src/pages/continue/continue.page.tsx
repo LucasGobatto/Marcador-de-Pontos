@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonPage } from '../../components';
+import { ButtonPage } from '@components';
 
 export const Continue = () => {
   return (
