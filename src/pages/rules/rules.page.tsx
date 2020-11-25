@@ -1,8 +1,8 @@
 import React from 'react';
-import { ButtonPage, ButtonURL } from '../../components/button';
-import '../rules/rules.page.styles.css';
-import CanastraSuja from '../../assets/images/canastra-suja.jpg';
-import CanastraLimpa from '../../assets/images/canastra-limpa.jpg';
+import { ButtonPage, ButtonURL } from '@components/button';
+import './rules.page.styles.css';
+import CanastraSuja from '@assets/images/canastra-suja.jpg';
+import CanastraLimpa from '@assets/images/canastra-limpa.jpg';
 
 export function Rules() {
   return (

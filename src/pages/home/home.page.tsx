@@ -1,7 +1,7 @@
 import React from 'react';
 import './home.page.styles.css';
-import Logo from '../../assets/icons/darklogo.jpeg';
-import { ButtonPage } from '../../components';
+import Logo from '@assets/icons/darklogo.jpeg';
+import { ButtonPage } from '@components';
 
 export const Home = () => {
   return (
