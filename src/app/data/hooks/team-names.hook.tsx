@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface TeamNamesProviderProps {
+export interface TeamNamesProviderProps {
   team1: {
     name: string;
     player1: string;

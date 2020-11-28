@@ -4,7 +4,7 @@ import { ButtonPage } from '@components';
 export const Continue = () => {
   return (
     <div>
-      <ButtonPage title="Inicio" icon="hearts" />
+      <ButtonPage title="Inicio" icon="clubs" />
     </div>
   );
 };

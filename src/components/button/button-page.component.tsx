@@ -7,6 +7,7 @@ import './button-page.styled.css';
 interface ButtonProps {
   title: string;
   icon?: 'hearts' | 'spades' | 'diamonds' | 'clubs';
+  onClick?: (param?: any) => void;
 }
 
 export function ButtonPage(props: ButtonProps) {
@@ -17,6 +18,7 @@ export function ButtonPage(props: ButtonProps) {
 
   function handleClick(name: string) {
     history.push(name);
+    props.onClick?.();
   }
 
   function chooseIcon(): JSX.Element | null {

@@ -23,7 +23,7 @@ export function About() {
         entusiasta da programação, e pra mim isso foi um grande momento de aprendizado e prática sobre o assunto.
         Apresento-lhes então, o Marcador de Pontos. Espero que possam aproveitá-lo tanto quanto eu estou aproveitando :)
       </p>
-      <ButtonPage title="Inicio" icon="hearts" />
+      <ButtonPage title="Inicio" icon="clubs" />
       <p className="Criadores">Rodrigo Gobatto e Lucas Gobatto</p>
     </div>
   );
