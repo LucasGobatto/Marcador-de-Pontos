@@ -10,12 +10,14 @@
   text-align: center;
   text-transform: uppercase;
   width: 100%;
+  margin: 1rem 0;
 }
 
 .topic-rules {
   color: #c1272d;
   text-align: center;
   width: 100%;
+  margin: 0.5rem 0;
 }
 
 .paragraph-rules {
@@ -26,10 +28,11 @@
   font-style: normal;
   font-weight: 400;
   width: 100%;
+  margin: 0.5rem 0;
 }
 
-.rules-image {
+.image-rules {
   max-width: 289px;
   max-height: 75px;
-  padding: 10px;
+  margin: 1rem 0;
 }

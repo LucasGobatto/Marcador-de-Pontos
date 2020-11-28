@@ -121,8 +121,8 @@ export function Rules() {
         <b>Canastra -</b> Jogo de sete cartas ou mais do mesmo valor de qualquer naipe, ou jogo de sete cartas em
         sequência, do mesmo naipe. Existem dois tipos de canastra, a suja que tem coringa e a limpa que não tem:
       </p>
-      <img className="rules-image" src={CanastraSuja} alt="Canastra Limpa" />
-      <img className="rules-image" src={CanastraLimpa} alt="Canastra Suja" />
+      <img className="image-rules" src={CanastraSuja} alt="Canastra Limpa" />
+      <img className="image-rules" src={CanastraLimpa} alt="Canastra Suja" />
       <br />
 
       <h2 className="topic-rules">Contagem dos pontos</h2>
