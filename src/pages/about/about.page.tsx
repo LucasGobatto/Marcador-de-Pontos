@@ -4,9 +4,9 @@ import './about.page.styles.css';
 
 export function About() {
   return (
-    <div>
-      <h1>De onde veio a ideia de fazer o app?</h1>
-      <p>
+    <div className="containier-about">
+      <h1 className="title-about">De onde veio a ideia de fazer o app?</h1>
+      <p className="paragraph-about">
         Na nossa família, todo mundo gosta de jogar tranca. E quando nos reunimos, vamos longe. 1h, 2h às vezes até 3h
         da manhã jogando. Pensa num monte de velhinho que costuma acordar 5h30 indo dormir às 3h. Enfim, sempre que
         jogamos acontece a mesma coisa: acaba a partida e precisamos anotar os pontos. Junto com o baralho já deixamos o
@@ -23,13 +23,8 @@ export function About() {
         entusiasta da programação, e pra mim isso foi um grande momento de aprendizado e prática sobre o assunto.
         Apresento-lhes então, o Marcador de Pontos. Espero que possam aproveitá-lo tanto quanto eu estou aproveitando :)
       </p>
-      <p className="Criadores">
-        Criadores:
-        <br />
-        Rodrigo Gobatto e Lucas Gobatto
-      </p>
-      <br />
       <ButtonPage title="Inicio" icon="home" />
+      <p className="Criadores">Rodrigo Gobatto e Lucas Gobatto</p>
     </div>
   );
 }

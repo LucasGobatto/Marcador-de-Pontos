@@ -1,33 +1,38 @@
-div {
+.container-rules {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 50px 0px;
+  margin: 2rem;
 }
 
-h1 {
+.title-rules {
   color: #c1272d;
-  font-family: "Dosis", sans-serif;
-  align-items: center;
+  text-align: center;
   text-transform: uppercase;
+  width: 100%;
+  margin: 1rem 0;
 }
 
-h2 {
+.topic-rules {
   color: #c1272d;
-  font-family: "Dosis", sans-serif;
-  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 0.5rem 0;
 }
 
-p {
+.paragraph-rules {
+  text-align: center;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: justify;
   font-style: normal;
   font-weight: 400;
+  width: 100%;
+  margin: 0.5rem 0;
 }
 
-.Regras {
-  width: 289px;
-  height: 75px;
-  padding: 10px;
+.image-rules {
+  max-width: 289px;
+  max-height: 75px;
+  margin: 1rem 0;
 }

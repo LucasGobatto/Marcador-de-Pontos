@@ -9,7 +9,6 @@
   height: 3.5rem;
   background-color: #fff;
   border: #000 solid 2px;
-  font-family: 'Dosis', sans-serif;
   font-weight: bold;
   font-size: large;
   margin: 0.5rem;
@@ -42,7 +41,6 @@
 
 .button-name {
   color: #000;
-  font-family: 'Dosis', sans-serif;
   text-align: end;
   font-style: normal;
   font-weight: 400;
