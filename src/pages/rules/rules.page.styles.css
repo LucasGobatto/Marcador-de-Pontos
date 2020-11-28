@@ -2,32 +2,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 50px 0px;
+  margin: 2rem;
 }
 
 .title-rules {
   color: #c1272d;
-  font-family: 'Dosis', sans-serif;
-  align-items: center;
+  text-align: center;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .topic-rules {
   color: #c1272d;
-  font-family: 'Dosis', sans-serif;
-  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .paragraph-rules {
+  text-align: center;
   color: white;
   font-family: 'Roboto', sans-serif;
   text-align: justify;
   font-style: normal;
   font-weight: 400;
+  width: 100%;
 }
 
-.Regras {
-  width: 289px;
-  height: 75px;
+.rules-image {
+  max-width: 289px;
+  max-height: 75px;
   padding: 10px;
 }

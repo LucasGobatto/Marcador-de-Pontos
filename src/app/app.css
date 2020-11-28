@@ -2,11 +2,11 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  font-family: 'Dosis', sans-serif;
 }
 
 body {
   align-items: center;
   justify-content: center;
-  max-height: 1440px;
   background-color: #000;
 }
