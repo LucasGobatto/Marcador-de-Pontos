@@ -82,7 +82,7 @@ export function NewGame() {
       </div>
       <div className="button-container">
         <RandomNamesButton title="Combinar Nomes" onClick={handleClick} />
-        <ButtonPage title="Inicio" icon="home" />
+        <ButtonPage title="Inicio" icon="hearts" />
       </div>
     </div>
   );

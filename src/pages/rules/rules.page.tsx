@@ -142,7 +142,7 @@ export function Rules() {
       <ButtonURL site="Jogos do Rei" url="http://www.jogosdorei.com.br/regras-tranca.php" />
       <ButtonURL site="Net Cartas" url="https://netcartas.com.br/tranca/regras.jsp" />
       <br />
-      <ButtonPage title="Inicio" icon="home" />
+      <ButtonPage title="Inicio" icon="hearts" />
     </div>
   );
 }

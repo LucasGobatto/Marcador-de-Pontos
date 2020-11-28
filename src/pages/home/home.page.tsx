@@ -7,10 +7,10 @@ export const Home = () => {
   return (
     <div className="home">
       <img className="logo" src={Logo} alt="logo" />
-      <ButtonPage title="Novo Jogo" icon="newgame" />
-      <ButtonPage title="Continue" icon="continue" />
-      <ButtonPage title="Regras" icon="rules" />
-      <ButtonPage title="Sobre" icon="home" />
+      <ButtonPage title="Novo Jogo" icon="hearts" />
+      <ButtonPage title="Continue" icon="spades" />
+      <ButtonPage title="Regras" icon="diamonds" />
+      <ButtonPage title="Sobre" icon="clubs" />
     </div>
   );
 };
