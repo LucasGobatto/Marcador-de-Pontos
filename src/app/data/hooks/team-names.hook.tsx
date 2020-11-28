@@ -23,9 +23,9 @@ const TeamNameContext = React.createContext<TeamNameContextProps>({} as TeamName
 export const TeamNamesProvider: React.FC = (props) => {
   const [teamNames, setTeamNames] = React.useState<TeamNamesProviderProps>({} as TeamNamesProviderProps);
 
-  const setNames = (names: TeamNamesProviderProps) => {
+  const setNames = React.useCallback((names: TeamNamesProviderProps) => {
     setTeamNames(names);
-  };
+  }, []);
 
   return <TeamNameContext.Provider value={{ teamNames, setNames }}>{props.children}</TeamNameContext.Provider>;
 };

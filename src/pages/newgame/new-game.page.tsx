@@ -12,7 +12,7 @@ interface PlayerNames {
 }
 
 export function NewGame() {
-  const { setNames } = useNames();
+  const { teamNames, setNames } = useNames();
   const [inputName, setInputName] = useState<PlayerNames>(initialNames());
   const [randomName, setRandomName] = useState<string[]>([]);
   const [clicked, setClicked] = useState(false);
@@ -33,13 +33,12 @@ export function NewGame() {
           },
         } as TeamNamesProviderProps;
         setNames(teamNames);
-      } else {
+      } else if (teamNames.team1) {
         setNames({} as TeamNamesProviderProps);
       }
     };
     saveNames();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [randomName]);
+  }, [randomName, inputName, teamNames, setNames]);
 
   function initialNames(): PlayerNames {
     return {
