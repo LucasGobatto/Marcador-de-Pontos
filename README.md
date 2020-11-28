@@ -1,12 +1,10 @@
 # Marcador de Tranca
 
-## Iniciar o Projeto
+## Fist Step
 
 Clone this respository.
 
-In the project directory, you can run:
-
-### `npm install` or `yarn install`
+In the project directory, you can run: `npm install` or `yarn install`
 
 ## Available Scripts
 
