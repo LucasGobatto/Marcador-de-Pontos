@@ -1,0 +1,43 @@
+.flash-message {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  position: absolute;
+  bottom: 1rem;
+  border-radius: 5px;
+  margin: 0.3rem;
+  border: none;
+  z-index: 8;
+  cursor: pointer;
+}
+
+.show-message {
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  font-size: 20px;
+}
+
+.flash-icon {
+  border-radius: 5px;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  margin: 0.3rem;
+}
+
+#sucess {
+  background-color: #4ff974;
+}
+
+#caption {
+  background-color: #f45151;
+}
+
+#warning {
+  background-color: #f9c854;
+}
+
+#info {
+  background-color: #4a4af9;
+}
