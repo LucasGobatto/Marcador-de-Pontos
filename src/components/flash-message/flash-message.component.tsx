@@ -5,30 +5,37 @@ import { BiErrorAlt } from 'react-icons/bi';
 
 export interface FlashMessageProps {
   message?: string;
-  type?: 'sucess' | 'caption' | 'warning' | 'info';
-  visible?: boolean;
-  onClick?: () => void;
+  type?: 'success' | 'caption' | 'warning' | 'info';
+  onTap?: (visible?: boolean) => void;
 }
 
+export interface FlashMessageParams extends FlashMessageProps {
+  visible?: boolean;
+}
+
+const ANIMATION_TIME = 4000; //ms
+
 export const FlashMessage: React.FC<FlashMessageProps> = (props) => {
-  const [isVisible, setIsVisible] = React.useState(props.visible);
   const timeRef = React.useRef<NodeJS.Timeout>();
+  const wrapperRef = React.createRef<HTMLButtonElement>();
 
   React.useEffect(() => {
-    if (props.visible) {
-      setIsVisible(true);
-      timeRef.current = setTimeout(() => {
-        setIsVisible(false);
-      }, 4000);
-    } else {
-      setIsVisible(false);
-    }
-  }, [props]);
+    const wrapper = wrapperRef.current;
+    wrapper?.classList.toggle('show-flash-message');
+
+    timeRef.current = setTimeout(() => {
+      props.onTap?.();
+    }, ANIMATION_TIME);
+
+    return () => {
+      clearTimeout(timeRef.current!);
+    };
+  }, [props, wrapperRef]);
 
   function setIcon() {
     let icon;
-    switch (props.type ?? 'sucess') {
-      case 'sucess':
+    switch (props.type ?? 'success') {
+      case 'success':
         icon = <AiOutlineCheckCircle className="flash-icon" />;
         break;
       case 'caption':
@@ -46,17 +53,13 @@ export const FlashMessage: React.FC<FlashMessageProps> = (props) => {
 
   function handleClick() {
     clearTimeout(timeRef.current!);
-    props?.onClick?.();
+    props?.onTap?.();
   }
 
-  if (isVisible) {
-    return (
-      <button className="flash-message" id={props.type ?? 'sucess'} onClick={handleClick}>
-        {setIcon()}
-        <p className="show-message">{props.message ?? 'This is the flash message!'}</p>
-      </button>
-    );
-  }
-
-  return null;
+  return (
+    <button ref={wrapperRef} className="flash-message" id={props.type ?? 'success'} onClick={handleClick}>
+      {setIcon()}
+      <p className="show-message">{props.message ?? 'This is the flash message!'}</p>
+    </button>
+  );
 };

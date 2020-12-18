@@ -3,12 +3,13 @@
   align-items: center;
   justify-self: center;
   position: absolute;
-  bottom: 1rem;
+  top: 0.5rem;
   border-radius: 5px;
   margin: 0.3rem;
   border: none;
   z-index: 8;
   cursor: pointer;
+  animation: show-flash-message ease-in 200ms;
 }
 
 .show-message {
@@ -22,16 +23,16 @@
   border-radius: 5px;
   color: #fff;
   width: 20px;
-  height: 20px;
+  min-height: 20px;
   margin: 0.3rem;
 }
 
-#sucess {
-  background-color: #4ff974;
+#success {
+  background-color: #309800;
 }
 
 #caption {
-  background-color: #f45151;
+  background-color: #c1272d;
 }
 
 #warning {
@@ -40,4 +41,13 @@
 
 #info {
   background-color: #4a4af9;
+}
+
+@keyframes show-flash-message {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

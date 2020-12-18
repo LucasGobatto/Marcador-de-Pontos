@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './new-game.page.styles.css';
-import { ButtonPage, FlashMessage, FlashMessageProps, InputName, RandomNamesButton } from '@components';
+import { ButtonPage, FlashMessage, FlashMessageParams, InputName, RandomNamesButton } from '@components';
 import { equipName } from '@scripts/equip-name';
 import { TeamNamesProviderProps, useNames } from '@app/data';
 
@@ -16,11 +16,7 @@ export function NewGame() {
   const [inputName, setInputName] = useState<PlayerNames>(initialNames());
   const [randomName, setRandomName] = useState<string[]>([]);
   const [clicked, setClicked] = useState(false);
-  const [flashMessage, setFlashMessage] = useState<FlashMessageProps>({ visible: false });
-
-  React.useEffect(() => {
-    console.log(flashMessage);
-  }, [flashMessage]);
+  const [flashMessage, setFlashMessage] = useState<FlashMessageParams>({ visible: false });
 
   React.useEffect(() => {
     const saveNames = () => {
@@ -82,8 +78,8 @@ export function NewGame() {
     handleValidation();
   }
 
-  function closeFlashMessage() {
-    setFlashMessage({ visible: false });
+  function closeFlashMessage(visible?: boolean) {
+    setFlashMessage({ visible });
   }
 
   return (
@@ -122,12 +118,9 @@ export function NewGame() {
         <RandomNamesButton title="Combinar Nomes" onClick={handleClick} />
         <ButtonPage title="Inicio" icon="clubs" />
       </div>
-      <FlashMessage
-        onClick={closeFlashMessage}
-        visible={flashMessage.visible}
-        type={flashMessage.type}
-        message={flashMessage.message}
-      />
+      {flashMessage.visible && (
+        <FlashMessage onTap={closeFlashMessage} type={flashMessage.type} message={flashMessage.message} />
+      )}
     </div>
   );
 }
