@@ -33,7 +33,7 @@ export const FlashMessage: React.FC<FlashMessageProps> = (props) => {
   }, [props, wrapperRef]);
 
   function setIcon() {
-    let icon;
+    let icon: JSX.Element;
     switch (props.type ?? 'success') {
       case 'success':
         icon = <AiOutlineCheckCircle className="flash-icon" />;
@@ -47,6 +47,8 @@ export const FlashMessage: React.FC<FlashMessageProps> = (props) => {
       case 'info':
         icon = <AiOutlineInfoCircle className="flash-icon" />;
         break;
+      default:
+        throw new Error(`Type '${props.type}' is not a valid type. Must be success, caption, warning or info.`);
     }
     return icon;
   }
@@ -59,7 +61,7 @@ export const FlashMessage: React.FC<FlashMessageProps> = (props) => {
   return (
     <button ref={wrapperRef} className="flash-message" id={props.type ?? 'success'} onClick={handleClick}>
       {setIcon()}
-      <p className="show-message">{props.message ?? 'This is the flash message!'}</p>
+      <p className="message">{props.message ?? 'This is the flash message!'}</p>
     </button>
   );
 };

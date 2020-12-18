@@ -1,18 +1,4 @@
-.flash-message {
-  display: flex;
-  align-items: center;
-  justify-self: center;
-  position: absolute;
-  top: 0.5rem;
-  border-radius: 5px;
-  margin: 0.3rem;
-  border: none;
-  z-index: 8;
-  cursor: pointer;
-  animation: show-flash-message ease-in 200ms;
-}
-
-.show-message {
+.message {
   color: #fff;
   padding: 0.2rem 0.5rem;
   text-align: center;
@@ -41,6 +27,20 @@
 
 #info {
   background-color: #4a4af9;
+}
+
+.flash-message {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  position: absolute;
+  top: 0.5rem;
+  border-radius: 5px;
+  margin: 0.3rem;
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+  animation: show-flash-message ease-in 200ms;
 }
 
 @keyframes show-flash-message {
