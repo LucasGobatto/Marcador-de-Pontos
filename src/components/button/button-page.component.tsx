@@ -6,7 +6,8 @@ import './button-page.styled.css';
 
 interface ButtonProps {
   title: string;
-  icon?: 'newgame' | 'continue' | 'rules' | 'home';
+  icon?: 'hearts' | 'spades' | 'diamonds' | 'clubs';
+  onClick?: (param?: any) => void;
 }
 
 export function ButtonPage(props: ButtonProps) {
@@ -17,17 +18,18 @@ export function ButtonPage(props: ButtonProps) {
 
   function handleClick(name: string) {
     history.push(name);
+    props.onClick?.();
   }
 
   function chooseIcon(): JSX.Element | null {
     switch (props.icon) {
-      case 'newgame':
+      case 'hearts':
         return <GiHearts className="red-icon" />;
-      case 'continue':
+      case 'spades':
         return <ImSpades className="black-icon" />;
-      case 'rules':
+      case 'diamonds':
         return <ImDiamonds className="red-icon" />;
-      case 'home':
+      case 'clubs':
         return <ImClubs className="black-icon" />;
       default:
         // there is no props
@@ -43,7 +45,7 @@ export function ButtonPage(props: ButtonProps) {
       }}
     >
       {chooseIcon()}
-      <p className='button-name'>{props.title}</p>
+      <p className="button-name">{props.title}</p>
     </button>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './new-game.page.styles.css';
 import { ButtonPage, InputName, RandomNamesButton } from '@components';
 import { equipName } from '@scripts/equip-name';
+import { TeamNamesProviderProps, useNames } from '@app/data';
 
 interface PlayerNames {
   player1: { name: string; hasError: boolean };
@@ -11,9 +12,33 @@ interface PlayerNames {
 }
 
 export function NewGame() {
+  const { teamNames, setNames } = useNames();
   const [inputName, setInputName] = useState<PlayerNames>(initialNames());
   const [randomName, setRandomName] = useState<string[]>([]);
   const [clicked, setClicked] = useState(false);
+
+  React.useEffect(() => {
+    const saveNames = () => {
+      if (randomName.length > 0) {
+        const teamNames = {
+          team1: {
+            name: randomName[0],
+            player1: inputName.player1.name,
+            player2: inputName.player2.name,
+          },
+          team2: {
+            name: randomName[1],
+            player3: inputName.player3.name,
+            player4: inputName.player4.name,
+          },
+        } as TeamNamesProviderProps;
+        setNames(teamNames);
+      } else if (teamNames.team1) {
+        setNames({} as TeamNamesProviderProps);
+      }
+    };
+    saveNames();
+  }, [randomName, inputName, teamNames, setNames]);
 
   function initialNames(): PlayerNames {
     return {
@@ -39,6 +64,7 @@ export function NewGame() {
       const teamName2 = equipName(inputName.player3.name, inputName.player4.name);
       setRandomName([teamName1, teamName2]);
     } else {
+      // todo: creat a flash alert!
       alert('Todos os campos devem ser preenchidos somente com letras');
     }
   }
@@ -82,7 +108,7 @@ export function NewGame() {
       </div>
       <div className="button-container">
         <RandomNamesButton title="Combinar Nomes" onClick={handleClick} />
-        <ButtonPage title="Inicio" icon="home" />
+        <ButtonPage title="Inicio" icon="clubs" />
       </div>
     </div>
   );

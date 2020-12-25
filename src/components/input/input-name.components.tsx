@@ -25,7 +25,6 @@ export function InputName(props: InputNameProps) {
     if (props.readyToValidate) {
       validateField(text);
     }
-    console.log('entrou no useEffect');
   }, [props, text]);
 
   function handleChangeChild(text: string): void {
