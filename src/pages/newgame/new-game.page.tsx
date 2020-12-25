@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './new-game.page.styles.css';
-import { ButtonPage, InputName, RandomNamesButton } from '@components';
+import { ButtonPage, FlashMessage, FlashMessageParams, InputName, RandomNamesButton } from '@components';
 import { equipName } from '@scripts/equip-name';
 import { TeamNamesProviderProps, useNames } from '@app/data';
 
@@ -16,6 +16,7 @@ export function NewGame() {
   const [inputName, setInputName] = useState<PlayerNames>(initialNames());
   const [randomName, setRandomName] = useState<string[]>([]);
   const [clicked, setClicked] = useState(false);
+  const [flashMessage, setFlashMessage] = useState<FlashMessageParams>({ visible: false });
 
   React.useEffect(() => {
     const saveNames = () => {
@@ -64,14 +65,21 @@ export function NewGame() {
       const teamName2 = equipName(inputName.player3.name, inputName.player4.name);
       setRandomName([teamName1, teamName2]);
     } else {
-      // todo: creat a flash alert!
-      alert('Todos os campos devem ser preenchidos somente com letras');
+      setFlashMessage({
+        message: 'Todos os campos devem ser preenchidos somente com letras',
+        visible: true,
+        type: 'caption',
+      });
     }
   }
 
   function handleClick() {
     setClicked(true);
     handleValidation();
+  }
+
+  function closeFlashMessage(visible?: boolean) {
+    setFlashMessage({ visible });
   }
 
   return (
@@ -110,6 +118,9 @@ export function NewGame() {
         <RandomNamesButton title="Combinar Nomes" onClick={handleClick} />
         <ButtonPage title="Inicio" icon="clubs" />
       </div>
+      {flashMessage.visible && (
+        <FlashMessage onTap={closeFlashMessage} type={flashMessage.type} message={flashMessage.message} />
+      )}
     </div>
   );
 }

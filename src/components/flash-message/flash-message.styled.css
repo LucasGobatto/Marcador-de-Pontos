@@ -1,0 +1,53 @@
+.message {
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  font-size: 20px;
+}
+
+.flash-icon {
+  border-radius: 5px;
+  color: #fff;
+  width: 20px;
+  min-height: 20px;
+  margin: 0.3rem;
+}
+
+#success {
+  background-color: #309800;
+}
+
+#caption {
+  background-color: #c1272d;
+}
+
+#warning {
+  background-color: #f9c854;
+}
+
+#info {
+  background-color: #4a4af9;
+}
+
+.flash-message {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  position: absolute;
+  top: 0.5rem;
+  border-radius: 5px;
+  margin: 0.3rem;
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+  animation: show-flash-message ease-in 200ms;
+}
+
+@keyframes show-flash-message {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
