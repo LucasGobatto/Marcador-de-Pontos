@@ -5,3 +5,4 @@ export * from './home';
 export * from './rules';
 export * from './initial';
 export * from './about';
+export * from './score';

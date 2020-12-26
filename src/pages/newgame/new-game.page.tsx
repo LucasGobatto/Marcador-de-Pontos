@@ -3,6 +3,7 @@ import './new-game.page.styles.css';
 import { ButtonPage, FlashMessage, FlashMessageParams, InputName, RandomNamesButton } from '@components';
 import { equipName } from '@scripts/equip-name';
 import { TeamNamesProviderProps, useNames } from '@app/data';
+import { useHistory } from 'react-router-dom';
 
 interface PlayerNames {
   player1: { name: string; hasError: boolean };
@@ -17,6 +18,7 @@ export function NewGame() {
   const [randomName, setRandomName] = useState<string[]>([]);
   const [clicked, setClicked] = useState(false);
   const [flashMessage, setFlashMessage] = useState<FlashMessageParams>({ visible: false });
+  const history = useHistory();
 
   React.useEffect(() => {
     const saveNames = () => {
@@ -34,12 +36,13 @@ export function NewGame() {
           },
         } as TeamNamesProviderProps;
         setNames(teamNames);
+        history.push('placar');
       } else if (teamNames.team1) {
         setNames({} as TeamNamesProviderProps);
       }
     };
     saveNames();
-  }, [randomName, inputName, teamNames, setNames]);
+  }, [randomName, inputName, teamNames, setNames, history]);
 
   function initialNames(): PlayerNames {
     return {
