@@ -10,10 +10,12 @@ export const App: React.FC = () => {
     <TeamNamesProvider>
       <Router>
         <Switch>
-          <Route exact path="/" component={InitialPage} />
+          {/*
+          <Route exact path="/" component={InitialPage} >
           <Route path="/inicio" component={Home} />
           <Route path="/novojogo" component={NewGame} />
-          <Route path="/placar" component={Score} />
+          */}
+          <Route path="/" component={Score} />
           <Route path="/continue" component={Continue} />
           <Route path="/regras" component={Rules} />
           <Route path="/sobre" component={About} />

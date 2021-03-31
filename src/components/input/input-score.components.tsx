@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { onlyNumber } from './validation';
 import './input-name.styled.css';
 
@@ -10,7 +10,7 @@ interface InputScoreProps {
 }
 
 export function InputScore(props: InputScoreProps) {
-  const [text, setText] = useState<string>('');
+  const text = useRef<string>('');
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
@@ -19,23 +19,14 @@ export function InputScore(props: InputScoreProps) {
       setHasError(hasError);
     };
     if (props.readyToValidate) {
-      validateField(text);
+      validateField(text.current);
     }
   }, [props.readyToValidate, text]);
 
-  useEffect(() => {
-    props.onChangeParent(text, props.name, hasError);
-  }, [hasError, text, props.name, props]);
+  const handleChange = (event: any) => {
+    text.current = event.target.value;
+    props.onChangeParent(text.current, props.name, hasError);
+  };
 
-  function handleChangeChild(text: string): void {
-    setText(text);
-  }
-
-  return (
-    <input
-      className="input-names"
-      placeholder={props.placeholder}
-      onChange={(event) => handleChangeChild(event.target.value)}
-    />
-  );
+  return <input className="input-names" placeholder={props.placeholder} onChange={handleChange} />;
 }

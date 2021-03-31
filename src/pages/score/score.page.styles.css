@@ -1,10 +1,48 @@
-.score-container {
+.sub-container {
   display: flex;
   flex-direction: row;
+  height: 70%;
+  width: 400px;
   margin: 2rem;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.score-container h2 {
+  position: absolute;
+  bottom: 0
+}
+
+.popup-main-container {
+  background-color: #666;
+  position: absolute;
+  top: 40%
 }
 
 .popup-container-1 {
   display: flex;
   flex-direction: row;
+}
+
+.scores {
+  text-align: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 100%;
+  width: 100%;
+}
+
+.scores p {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.button-container {
+  display: flex;
 }
