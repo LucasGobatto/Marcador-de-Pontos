@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './score.page.styles.css';
 import { useNames } from '@app/data';
-import { ButtonPage, InputScore } from '@components';
+import { ButtonPage, CommonButton, InputScore } from '@components';
 
 interface TeamScore {
   team1: Array<number>;
@@ -104,24 +104,14 @@ export function Score() {
       {showPopUp && (
         <div className="popup-main-container">
           <h1>Pontuação da Rodada</h1>
-          <div className="popup-container-1">
+          <div className="popup-container">
             <div>
               <p>{teamNames?.team1?.name ?? 'Equipe 1'}</p>
-              <InputScore
-                name="team1"
-                onChangeParent={handleChange}
-                readyToValidate={false}
-                placeholder="Digite aqui"
-              />
+              <InputScore name="team1" onChangeParent={handleChange} readyToValidate placeholder="Digite aqui" />
             </div>
             <div>
               <p>{teamNames?.team2?.name ?? 'Equipe 2'}</p>
-              <InputScore
-                name="team2"
-                onChangeParent={handleChange}
-                readyToValidate={false}
-                placeholder="Digite aqui"
-              />
+              <InputScore name="team2" onChangeParent={handleChange} readyToValidate placeholder="Digite aqui" />
             </div>
           </div>
           <button onClick={handleCancel}>Cancelar</button>
@@ -130,10 +120,10 @@ export function Score() {
       )}
 
       <div className="button-container">
-        <ButtonPage title="Início" icon="clubs" />
-        <button onClick={cleanData}>Zerar</button>
-        <button onClick={() => setShowPopUp(true)}>Adicionar</button>
+        <CommonButton color="gray" onClick={cleanData} title="Zerar" />
+        <CommonButton onClick={() => setShowPopUp(true)} title="Adicionar" />
       </div>
+      <ButtonPage title="Início" icon="clubs" />
     </div>
   );
 }

@@ -9,7 +9,7 @@ interface InputScoreProps {
   onChangeParent: (text: string, name: string, hasError: boolean) => void;
 }
 
-export function InputScore(props: InputScoreProps) {
+export const InputScore: React.FC<InputScoreProps> = (props) => {
   const text = useRef<string>('');
   const [hasError, setHasError] = useState(false);
 
@@ -29,4 +29,4 @@ export function InputScore(props: InputScoreProps) {
   };
 
   return <input className="input-names" placeholder={props.placeholder} onChange={handleChange} />;
-}
+};

@@ -10,10 +10,24 @@
   margin: 0.5rem;
 }
 
+#red {
+  background-color: #c02932;
+  color: #fff;
+}
+#gray {
+  background-color: #bbb;
+}
+
 .common-button:hover {
   transition: 300ms;
   width: 8.5rem;
   height: 3rem;
   margin: 0.25rem;
-  background-color: #bbb;
+}
+
+#red:hover {
+  background-color: #ee1414;
+}
+#gray:hover {
+  background-color: #888;
 }

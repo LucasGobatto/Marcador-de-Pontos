@@ -10,7 +10,7 @@ export const App: React.FC = () => {
     <TeamNamesProvider>
       <Router>
         <Switch>
-          <Route exact path="/" component={InitialPage} />
+          <Route exact path="/placar" component={InitialPage} />
           <Route path="/inicio" component={Home} />
           <Route path="/novojogo" component={NewGame} />
           <Route path="/" component={Score} />

@@ -19,17 +19,6 @@
   bottom: 0
 }
 
-.popup-main-container {
-  background-color: #666;
-  position: absolute;
-  top: 40%
-}
-
-.popup-container-1 {
-  display: flex;
-  flex-direction: row;
-}
-
 .scores {
   text-align: center;
   overflow: hidden;
@@ -45,4 +34,25 @@
 
 .button-container {
   display: flex;
+}
+
+
+.popup-main-container {
+  background-color: #666;
+  position: absolute;
+  top: 10%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.popup-container {
+  display: block;
+  flex-direction: row;
+}
+
+.popup-container h1 {
+  align-self: center;
 }
